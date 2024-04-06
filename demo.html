@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            border: 2px solid red;
+            gap: 20px;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 200px;
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">I am a box, and my name is hue hue</div>
+    </div>
+    <script>
+        function add_card(name) {
+            let html = `<div class="box">I am a box, and my name is ${name}</div>`
+            let cont = document.querySelector(".container")
+            // cont.innerHTML += html
+            cont.insertAdjacentHTML("afterbegin", html)
+        }
+
+        function add_card_2(name) {
+            let new_ele = document.createElement("div")
+            new_ele.classList.add("box")
+            new_ele.textContent = `I am a box, and my name is ${name}`
+
+            let cont = document.querySelector(".container");
+            cont.insertAdjacentElement("beforeend", new_ele);
+        }
+        add_card("suvojit")
+        add_card("suvojit")
+        add_card("suvojit")
+        add_card("suvojit")
+        add_card_2("harry")
+        add_card_2("harry")
+        add_card_2("harry")
+        add_card_2("harry")
+    </script>
+</body>
+
+</html>
